@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
     <title>Espruino setup</title>
-</head>
-<body>
-    <h1>Welcome to zzz</h1>
-    <div>
-        <h2>Status: <span>Not connected</span></h2>
-    </div>
-    <div>
-        <form>
-            <h3>SSID</h3>
-            <input type="text">
-            <h3>Password</h3>
-            <input type="text">
+  </head>
+  <body class="bg-zinc-900 text-white">
+    <div class="grid place-content-center h-screen">
+      <p class="text-9xl pb-20">Welcome to zzz</p>
+      <div class="grid place-content-center">
+        <p class="self-center py-6">Status: <span id="status">Not connected</span></p>
+        <form id="form">
+          <div class="pb-6">
+            <label class="block" for="ssid">SSID:</label>
+            <input
+              class="text-black"
+              type="text"
+              name="ssid"
+              id="ssid"
+              minlength="2"
+              maxlength="32"
+              required
+              placeholder="SSID"
+            />
+          </div>
+          <div class="pb-6">
+            <label class="block" for="password">Password (8 characters minimum):</label>
+            <input
+              class="text-black"
+              type="password"
+              name="password"
+              id="password"
+              minlength="8"
+              maxlength="32"
+              required
+              placeholder="Password"
+            />
+            
+          </div>
+          <input class="bg-slate-200 w-full text-black" type="submit" value="Connect" />
         </form>
-        <button>Connect</button>
+      </div>
     </div>
-</body>
+  </body>
 </html>
